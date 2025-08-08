@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vibe Tetris</title>
+    <!-- Ensure proper scaling on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link the web app manifest for PWA installation -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <!-- Define the theme color for the browser UI -->
+    <meta name="theme-color" content="#111111">
+    <style>
+      /* Basic styles for the page and canvas */
+      body {
+        margin: 0;
+        background: #111;
+        color: #fff;
+        font-family: sans-serif;
+        text-align: center;
+      }
+      canvas {
+        background: #111;
+        display: block;
+        margin: 2rem auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Vibe Tetris</h1>
+    <!-- The game canvas. Its size is controlled via JavaScript -->
+    <canvas id="c" width="300" height="600"></canvas>
+    <!-- The game logic lives in script.js -->
+    <script src="script.js"></script>
+    <!-- Register the service worker for offline support -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+      }
+    </script>
+  </body>
+</html>
